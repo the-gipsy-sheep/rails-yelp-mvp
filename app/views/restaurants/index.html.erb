@@ -1,0 +1,15 @@
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+  <div class="card m-3 col-5">
+    <div class="card-header">
+      <%= restaurant.category.capitalize %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= restaurant.name %></h5>
+      <p class="card-text"><%= restaurant.address %> - <%= restaurant.phone_number %></p>
+    <%= link_to "Add a review", new_restaurant_review_path(restaurant), class:"btn btn-primary" %>
+    <%= link_to "See reviews", restaurant_path(restaurant), class:"btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+</div>
